@@ -6,10 +6,11 @@ PowerShell Remoting Security Considerations: https://docs.microsoft.com/en-us/po
 **Configuration (Domain Joined)**
 
 Run PowerShell as an Administrator and execute:
-
+```sh
 Enable-PSRemoting
-
+```
 https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-5.1
+
 This command will perform the following steps:
 - Runs the Set-WSManQuickConfig cmdlet, which performs the following tasks:
 - Starts the WinRM service.
@@ -21,12 +22,19 @@ This command will perform the following steps:
 - Enables all session configurations.
 - Changes the security descriptor of all session configurations to allow remote access.
 - Restarts the WinRM service to make the preceding changes effective.
+
 **Verifying Listeners**
+
 Confirm the listener:
-    Get-WSManInstance -ResourceURI winrm/config/listener -SelectorSet @{Address="*";Transport="http"}
+```sh
+Get-WSManInstance -ResourceURI winrm/config/listener -SelectorSet @{Address="*";Transport="http"}
+```
+
 The output should reflect the newly configured listener with Enabled : true
+
 Additional Considerations
-By default two BUILTIN groups are allowed to use PowerShell Remoting as of v4.0. The Administrators and Remote Management Users.
+
+- By default two BUILTIN groups are allowed to use PowerShell Remoting as of v4.0. The Administrators and Remote Management Users.
 (Get-PSSessionConfiguration -Name Microsoft.PowerShell).Permission
 Sessions are launched by Secret Server under the user's context which means all the same security controls and policies apply within the session.
 Investigating PowerShell Attacks by FireEye
