@@ -44,11 +44,12 @@ Additional Considerations
 - Investigating PowerShell Attacks by FireEye: https://www.fireeye.com/content/dam/fireeye-www/global/en/solutions/pdfs/wp-lazanciyan-investigating-powershell-attacks.pdf
 
 - Your environment may already be configured for WinRM. If your server is already configured for WinRM but isn’t using the default configuration, you can change the URI to use a custom port or URLPrefix.
+
 **Configuration (Standalone)**
 
 By default WinRM uses Kerberos for Authentication. Since Kerberos is not available on machines which are not joined to the domain - HTTPS is required for secured transport of the password. Only use this method if you are going to be running scripts from a Secret Server Web Server or Distributed Engine which is not joined to the domain.
 
-*Note: WinRM HTTPS requires a local computer "Server Authentication" certificate with a CN matching the hostname, that is not expired, revoked, or self-signed to be installed. *
+*Note: WinRM HTTPS requires a local computer "Server Authentication" certificate with a CN matching the hostname, that is not expired, revoked, or self-signed to be installed.*
 
 A certificate would need to be installed on each endpoint for which Secret Server or the Engine would manage.
 
