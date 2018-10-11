@@ -51,7 +51,7 @@ By default WinRM uses Kerberos for Authentication. Since Kerberos is not availab
 
 *Note: WinRM HTTPS requires a local computer "Server Authentication" certificate with a CN matching the hostname, that is not expired, revoked, or self-signed to be installed.*
 
-A certificate would need to be installed on each endpoint for which Secret Server or the Engine would manage.
+A certificate needs to be installed on each endpoint for which Secret Server or the Engine would manage. Why? Although WinRM is a secure protocol, best practice calls for use of an HTTPS endpoint. This ensures that the endpoint is trusted since the domain is not present to provide trust.
 
 **Create the new listener:**
 ```sh
