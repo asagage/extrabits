@@ -2,7 +2,7 @@
 
 Secret Server relies on Windows Remote Management (WinRM) components to run PowerShell scripts. This requires configuration on the Secret Server Web Server and/or Distributed Engines. By default, Secret Server will use http://localhost:5985/wsman as the WinRM endpoint.​ The endpoint URI can be seen under Admin > Configuration OR Admin > Distributed Engine > Manage Sites > Local if using Distributed Engines. At the moment we only support running PowerShell scripts on localhost. If you are new to PowerShell Remoting please review the following articles:
 
-PowerShell Remoting Security Considerations: https://docs.microsoft.com/en-us/powershell/scripting/setup/winrmsecurity?view=powershell-6
+PowerShell Remoting Security Considerations: https://docs.microsoft.com/en-us/powershell/scripting/setup/winrmsecurity?view=powershell-5.1
  
 **Configuration (Domain Joined)**
 
